@@ -1,11 +1,11 @@
 {
   "stats": {
-    "suites": 6,
-    "tests": 8,
-    "passes": 7,
-    "pending": 1,
+    "suites": 12,
+    "tests": 16,
+    "passes": 14,
+    "pending": 2,
     "failures": 0,
-    "testsRegistered": 8,
+    "testsRegistered": 16,
     "passPercent": 87.5,
     "pendingPercent": 12.5,
     "other": 0,
@@ -13,8 +13,8 @@
     "skipped": 0,
     "hasSkipped": false,
     "start": "2026-09-20T02:00:25.748Z",
-    "end": "2026-09-20T02:00:36.849Z",
-    "duration": 11101
+    "end": "2026-09-24T05:38:49.814Z",
+    "duration": 358704066
   },
   "results": [
     {
@@ -332,6 +332,393 @@
           "pending": [],
           "skipped": [],
           "duration": 108,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "a7b91117-7aa6-41c1-8fc7-4a28d9377d8a",
+      "title": "",
+      "fullFile": "cypress/e2e/auth/login.env.cy.js",
+      "file": "cypress/e2e/auth/login.env.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bc2d4df6-8d8f-417c-b21c-7af8fe4377de",
+          "title": "Authentication - environment variables",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "logs in using Cypress.env() values",
+              "fullTitle": "Authentication - environment variables logs in using Cypress.env() values",
+              "timedOut": null,
+              "duration": 886,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const email = Cypress.env('testEmail');\nconst password = Cypress.env('testPassword');\nexpect(email, 'testEmail env variable').to.be.a('string').and.not.be.empty;\nexpect(password, 'testPassword env variable').to.be.a('string').and.not.be.empty;\ncy.login(email, password);\ncy.get('[data-cy=\"welcome-message\"]').should('contain', email);",
+              "err": {},
+              "uuid": "3422f722-0741-4999-a06b-38aa8b6cb35e",
+              "parentUUID": "bc2d4df6-8d8f-417c-b21c-7af8fe4377de",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3422f722-0741-4999-a06b-38aa8b6cb35e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 886,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "c9bd9d88-01a8-44d2-a0ff-82119e992178",
+      "title": "",
+      "fullFile": "cypress/e2e/auth/login.fixture.cy.js",
+      "file": "cypress/e2e/auth/login.fixture.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bfd49500-0fd9-4ef3-8093-77b0860d6238",
+          "title": "Authentication - fixture data",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "logs in using data loaded from a fixture",
+              "fullTitle": "Authentication - fixture data logs in using data loaded from a fixture",
+              "timedOut": null,
+              "duration": 867,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('user').then(user => {\n  cy.login(user.email, user.password);\n  cy.get('[data-cy=\"welcome-message\"]').should('contain', 'Welcome').and('contain', user.email);\n});",
+              "err": {},
+              "uuid": "53db1b9a-60ca-4af0-a22c-0e32ee56bc6c",
+              "parentUUID": "bfd49500-0fd9-4ef3-8093-77b0860d6238",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "53db1b9a-60ca-4af0-a22c-0e32ee56bc6c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 867,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "df20b5b0-9d69-4f4b-8a34-0244755beb2d",
+      "title": "",
+      "fullFile": "cypress/e2e/dashboard/flaky-fixed.cy.js",
+      "file": "cypress/e2e/dashboard/flaky-fixed.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "51f98416-1d3a-45ad-b519-18382b926c0d",
+          "title": "Flaky test scenario and stable fix",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "FLAKY EXAMPLE: relies on an arbitrary fixed wait",
+              "fullTitle": "Flaky test scenario and stable fix FLAKY EXAMPLE: relies on an arbitrary fixed wait",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.get('[data-cy=\"load-status\"]').click();\ncy.wait(200);\ncy.get('[data-cy=\"async-status\"]').should('contain', 'Inventory ready');",
+              "err": {},
+              "uuid": "9ea145e9-9a5e-4496-954d-ad75760e4c3b",
+              "parentUUID": "51f98416-1d3a-45ad-b519-18382b926c0d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FIXED: waits for the UI condition with Cypress automatic retries",
+              "fullTitle": "Flaky test scenario and stable fix FIXED: waits for the UI condition with Cypress automatic retries",
+              "timedOut": null,
+              "duration": 2023,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-cy=\"load-status\"]').click();\ncy.get('[data-cy=\"async-status\"]', {\n  timeout: 4000\n}).should('be.visible').and('contain', 'Inventory ready');",
+              "err": {},
+              "uuid": "aff0d5a9-6068-4fea-b5aa-a814297b8b0e",
+              "parentUUID": "51f98416-1d3a-45ad-b519-18382b926c0d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "aff0d5a9-6068-4fea-b5aa-a814297b8b0e"
+          ],
+          "failures": [],
+          "pending": [
+            "9ea145e9-9a5e-4496-954d-ad75760e4c3b"
+          ],
+          "skipped": [],
+          "duration": 2023,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "bd5a2f23-0590-459d-a3d4-9ebc3cb5af41",
+      "title": "",
+      "fullFile": "cypress/e2e/dashboard/intercept.cy.js",
+      "file": "cypress/e2e/dashboard/intercept.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d95ccd2d-af56-4135-a2aa-fcb34dbde7b3",
+          "title": "Product API behavior with cy.intercept()",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "stubs the product request and validates the UI",
+              "fullTitle": "Product API behavior with cy.intercept() stubs the product request and validates the UI",
+              "timedOut": null,
+              "duration": 250,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('products').then(products => {\n  cy.intercept('GET', '**/api/products', {\n    statusCode: 200,\n    delay: 150,\n    body: products\n  }).as('getProducts');\n  cy.visit('/');\n  cy.wait('@getProducts').its('response.statusCode').should('eq', 200);\n  cy.get('[data-cy=\"product-card\"]').should('have.length', products.length);\n  cy.contains('[data-cy=\"product-card\"]', 'Fixture Backpack').should('be.visible');\n  cy.contains('[data-cy=\"product-card\"]', '$29.99').should('be.visible');\n});",
+              "err": {},
+              "uuid": "73c2b25f-1fee-445a-a28d-c9b5bbda7ce5",
+              "parentUUID": "d95ccd2d-af56-4135-a2aa-fcb34dbde7b3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "73c2b25f-1fee-445a-a28d-c9b5bbda7ce5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 250,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "21b4ebcf-f4b2-499f-9f42-c41d11c09112",
+      "title": "",
+      "fullFile": "cypress/e2e/dashboard/products.cy.js",
+      "file": "cypress/e2e/dashboard/products.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8a6ac382-51eb-4c26-8468-3633b50db7ae",
+          "title": "Product workflow with reusable custom commands",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "adds a product to the cart using cy.addProduct()",
+              "fullTitle": "Product workflow with reusable custom commands adds a product to the cart using cy.addProduct()",
+              "timedOut": null,
+              "duration": 945,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.addProduct('Starter Backpack');\ncy.get('[data-cy=\"cart-items\"]').should('contain', 'Starter Backpack');",
+              "err": {},
+              "uuid": "1834c28f-b64e-487f-b42f-f6a8f7281a9b",
+              "parentUUID": "8a6ac382-51eb-4c26-8468-3633b50db7ae",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1834c28f-b64e-487f-b42f-f6a8f7281a9b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 945,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "98bc41e2-0178-489a-827c-e3bb9bd388b5",
+      "title": "",
+      "fullFile": "cypress/e2e/dashboard/session.cy.js",
+      "file": "cypress/e2e/dashboard/session.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "60211efd-d111-4df4-860e-fa3edb5c2b3e",
+          "title": "Cached authentication with cy.session()",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "restores the authenticated dashboard state",
+              "fullTitle": "Cached authentication with cy.session() restores the authenticated dashboard state",
+              "timedOut": null,
+              "duration": 53,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-cy=\"dashboard\"]').should('be.visible');\ncy.get('[data-cy=\"welcome-message\"]').should('contain', Cypress.env('testEmail'));",
+              "err": {},
+              "uuid": "6e169733-af58-468a-8f7a-6cb1ac10aaa4",
+              "parentUUID": "60211efd-d111-4df4-860e-fa3edb5c2b3e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "reuses the same cached login for another test",
+              "fullTitle": "Cached authentication with cy.session() reuses the same cached login for another test",
+              "timedOut": null,
+              "duration": 53,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-cy=\"product-list\"]').should('be.visible');\ncy.get('[data-cy=\"product-card\"]').should('have.length.at.least', 2);",
+              "err": {},
+              "uuid": "29f58dfe-3a27-4dbe-8017-3248edfdbbf6",
+              "parentUUID": "60211efd-d111-4df4-860e-fa3edb5c2b3e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6e169733-af58-468a-8f7a-6cb1ac10aaa4",
+            "29f58dfe-3a27-4dbe-8017-3248edfdbbf6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 106,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

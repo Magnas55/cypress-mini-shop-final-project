@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-09-24T05:38:46.688Z",
+    "end": "2026-09-24T05:38:46.968Z",
+    "duration": 280,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bd5a2f23-0590-459d-a3d4-9ebc3cb5af41",
+      "title": "",
+      "fullFile": "cypress/e2e/dashboard/intercept.cy.js",
+      "file": "cypress/e2e/dashboard/intercept.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d95ccd2d-af56-4135-a2aa-fcb34dbde7b3",
+          "title": "Product API behavior with cy.intercept()",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "stubs the product request and validates the UI",
+              "fullTitle": "Product API behavior with cy.intercept() stubs the product request and validates the UI",
+              "timedOut": null,
+              "duration": 250,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('products').then(products => {\n  cy.intercept('GET', '**/api/products', {\n    statusCode: 200,\n    delay: 150,\n    body: products\n  }).as('getProducts');\n  cy.visit('/');\n  cy.wait('@getProducts').its('response.statusCode').should('eq', 200);\n  cy.get('[data-cy=\"product-card\"]').should('have.length', products.length);\n  cy.contains('[data-cy=\"product-card\"]', 'Fixture Backpack').should('be.visible');\n  cy.contains('[data-cy=\"product-card\"]', '$29.99').should('be.visible');\n});",
+              "err": {},
+              "uuid": "73c2b25f-1fee-445a-a28d-c9b5bbda7ce5",
+              "parentUUID": "d95ccd2d-af56-4135-a2aa-fcb34dbde7b3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "73c2b25f-1fee-445a-a28d-c9b5bbda7ce5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 250,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/json",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "quiet": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

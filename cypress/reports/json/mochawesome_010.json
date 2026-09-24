@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-09-24T05:38:48.191Z",
+    "end": "2026-09-24T05:38:49.163Z",
+    "duration": 972,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "21b4ebcf-f4b2-499f-9f42-c41d11c09112",
+      "title": "",
+      "fullFile": "cypress/e2e/dashboard/products.cy.js",
+      "file": "cypress/e2e/dashboard/products.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8a6ac382-51eb-4c26-8468-3633b50db7ae",
+          "title": "Product workflow with reusable custom commands",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "adds a product to the cart using cy.addProduct()",
+              "fullTitle": "Product workflow with reusable custom commands adds a product to the cart using cy.addProduct()",
+              "timedOut": null,
+              "duration": 945,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.addProduct('Starter Backpack');\ncy.get('[data-cy=\"cart-items\"]').should('contain', 'Starter Backpack');",
+              "err": {},
+              "uuid": "1834c28f-b64e-487f-b42f-f6a8f7281a9b",
+              "parentUUID": "8a6ac382-51eb-4c26-8468-3633b50db7ae",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1834c28f-b64e-487f-b42f-f6a8f7281a9b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 945,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/json",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "quiet": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

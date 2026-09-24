@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-09-24T05:38:49.696Z",
+    "end": "2026-09-24T05:38:49.814Z",
+    "duration": 118,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "98bc41e2-0178-489a-827c-e3bb9bd388b5",
+      "title": "",
+      "fullFile": "cypress/e2e/dashboard/session.cy.js",
+      "file": "cypress/e2e/dashboard/session.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "60211efd-d111-4df4-860e-fa3edb5c2b3e",
+          "title": "Cached authentication with cy.session()",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "restores the authenticated dashboard state",
+              "fullTitle": "Cached authentication with cy.session() restores the authenticated dashboard state",
+              "timedOut": null,
+              "duration": 53,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-cy=\"dashboard\"]').should('be.visible');\ncy.get('[data-cy=\"welcome-message\"]').should('contain', Cypress.env('testEmail'));",
+              "err": {},
+              "uuid": "6e169733-af58-468a-8f7a-6cb1ac10aaa4",
+              "parentUUID": "60211efd-d111-4df4-860e-fa3edb5c2b3e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "reuses the same cached login for another test",
+              "fullTitle": "Cached authentication with cy.session() reuses the same cached login for another test",
+              "timedOut": null,
+              "duration": 53,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-cy=\"product-list\"]').should('be.visible');\ncy.get('[data-cy=\"product-card\"]').should('have.length.at.least', 2);",
+              "err": {},
+              "uuid": "29f58dfe-3a27-4dbe-8017-3248edfdbbf6",
+              "parentUUID": "60211efd-d111-4df4-860e-fa3edb5c2b3e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6e169733-af58-468a-8f7a-6cb1ac10aaa4",
+            "29f58dfe-3a27-4dbe-8017-3248edfdbbf6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 106,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/json",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "quiet": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

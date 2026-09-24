@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cypress Mini Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Cypress Mini Shop</h1>
+
+    <section id="login-view" class="panel">
+      <h2>Login</h2>
+      <label>Email</label>
+      <input data-cy="email" id="email" type="email" value="test@example.com" />
+
+      <label>Password</label>
+      <input data-cy="password" id="password" type="password" value="Password123!" />
+
+      <button data-cy="login-button" id="login-button">Sign in</button>
+      <p data-cy="login-error" id="login-error" class="error"></p>
+    </section>
+
+    <section id="dashboard-view" data-cy="dashboard" class="panel hidden">
+      <div class="toolbar">
+        <div>
+          <h2>Dashboard</h2>
+          <p data-cy="welcome-message" id="welcome-message"></p>
+        </div>
+        <button data-cy="logout-button" id="logout-button">Logout</button>
+      </div>
+
+      <div class="cart">
+        <strong>Cart:</strong> <span data-cy="cart-count" id="cart-count">0</span>
+        <div data-cy="cart-items" id="cart-items"></div>
+      </div>
+
+      <button data-cy="load-status" id="load-status">Load inventory status</button>
+      <p data-cy="async-status" id="async-status"></p>
+
+      <h3>Products</h3>
+      <div data-cy="product-list" id="product-list" class="grid"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

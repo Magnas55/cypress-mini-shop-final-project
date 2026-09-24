@@ -1,0 +1,12 @@
+[
+  {
+    "id": 101,
+    "name": "Fixture Backpack",
+    "price": 29.99
+  },
+  {
+    "id": 102,
+    "name": "Fixture Sneakers",
+    "price": 49.99
+  }
+]
